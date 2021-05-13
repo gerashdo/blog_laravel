@@ -40,3 +40,4 @@ Route::get('/usuario/{clave}/{edad?}', function ($clave, $edad=15) {
     echo "<a href='". route('index') ."'>Regresar al index</a>";
 })->where('edad','[0-9]+')->name('usuario_clave');
 
+Route::view('laravel', 'welcome');
