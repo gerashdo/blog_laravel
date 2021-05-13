@@ -17,12 +17,17 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-
-Route::get('/', function () {
-    echo "<a href='". route('nuevo') ."'>Crea usuario</a><br>";
-    echo "<a href='". route('nuevo_id',[3]) ."'>Usuario Detalle</a><br>";
-    echo "<a href='". route('usuario_clave',["1231", 20]) ."'>Usuario contraseña y edad</a><br>";
-})->name('index');
+$nombre="Gerardo";
+    $materias = [
+        'frameworks',
+        'Arquitectura',
+        'Bases de datos',
+        'Algoritmos'
+    ];
+    // var_dump(compact('nombre','materias'));
+    // die();
+    // dd(compact('nombre','materias'));
+Route::view('/', 'index',compact('nombre','materias'))->name('index');
 
 Route::get('usuario/nuevo/', function () {
     echo "<h1>Usuario nuevo</h1><br>";
