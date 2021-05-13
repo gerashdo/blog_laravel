@@ -29,20 +29,7 @@ $nombre="Gerardo";
     // dd(compact('nombre','materias'));
 Route::view('/', 'index',compact('nombre','materias'))->name('index');
 
-Route::get('usuario/nuevo/', function () {
-    echo "<h1>Usuario nuevo</h1><br>";
-    echo "<a href='". route('index') ."'>Regresar al index</a><br>";
-})->name('nuevo');
+Route::view('/acerca', 'acerca')->name('acerca');
+Route::view('/editar', 'editar')->name('editar');
+Route::view('/archivo', 'archivo')->name('archivo');
 
-Route::get('usuario/{id?}', function ($id=null) {
-    echo "<h1>Usuario nuevo con id</h1><br>";
-    echo "<a href='". route('index') ."'>Regresar al index</a><br>";
-})->name('nuevo_id');
-
-
-Route::get('/usuario/{clave}/{edad?}', function ($clave, $edad=15) {
-    echo "<h1>hola usuario tienes la clave {$clave}, tu edad es {$edad}</h1><br>";
-    echo "<a href='". route('index') ."'>Regresar al index</a>";
-})->where('edad','[0-9]+')->name('usuario_clave');
-
-Route::view('laravel', 'welcome');
