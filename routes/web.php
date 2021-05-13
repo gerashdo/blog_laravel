@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+
 Route::get('/', function () {
     echo "<a href='". route('nuevo') ."'>Crea usuario</a><br>";
     echo "<a href='". route('nuevo_id',[3]) ."'>Usuario Detalle</a><br>";
