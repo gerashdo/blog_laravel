@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EjemploController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\EditarController;
+use App\Http\Controllers\MedicosController;
+use App\Http\Controllers\MedicosApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,19 +22,12 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-$nombre="Gerardo";
-    $materias = [
-        'frameworks',
-        'Arquitectura',
-        'Bases de datos',
-        'Algoritmos'
-    ];
-    // var_dump(compact('nombre','materias'));
-    // die();
-    // dd(compact('nombre','materias'));
-Route::view('/', 'index',compact('nombre','materias'))->name('index');
 
-Route::view('/acerca', 'acerca')->name('acerca');
-Route::view('/editar', 'editar')->name('editar');
-Route::view('/archivo', 'archivo')->name('archivo');
+// Route::get('/', [IndexController::class,'index'])->name('index');
+// Route::get('/acerca', [IndexController::class,'acerca'])->name('acerca');
+// Route::get('/editar', EditarController::class)->name('editar');
+// Route::view('/archivo', 'archivo')->name('archivo');
+// Route::get('/hola',[EjemploController::class, 'hola'])->name('hola');
 
+// Route::resource('medicos', MedicosController::class);
+Route::apiResource('medicos', MedicosApiController::class);
